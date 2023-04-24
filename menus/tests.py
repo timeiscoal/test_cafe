@@ -1,10 +1,6 @@
-from django.test import TestCase
-from rest_framework.test import APITestCase ,APIClient ,force_authenticate
-from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.test import APITestCase ,APIClient 
 from users.models import User
 from menus.models import Menu , Category  , MenuSize
-from django.db.models import Q
-
 
 class TestMenu(APITestCase):
     

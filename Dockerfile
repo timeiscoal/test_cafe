@@ -1,5 +1,5 @@
 # python 3.10.8버전 이미지를 사용해 빌드
-FROM python:3.10.9-alpine
+FROM python:3.9-alpine
 
 # .pyc 파일을 생성하지 않도록 설정합니다.
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -7,7 +7,8 @@ ENV PYTHONDONTWRITEBYTECODE 1
 # 파이썬 로그가 버퍼링 없이 즉각적으로 출력하도록 설정합니다.
 ENV PYTHONUNBUFFERED 1
 
-RUN sudo apt-get update
+RUN apk update
+RUN apk add build-base python3-dev
 # /app/ 디렉토리를 생성합니다.
 RUN mkdir /app/
 
@@ -19,7 +20,7 @@ COPY ./requirements.txt .
 
 
 
-# RUN  pip install --upgrade pip
+RUN  pip install --upgrade pip
 # 프로젝트 실행에 필요한 패키지들을 설치합니다.
 RUN pip install -r requirements.txt
 

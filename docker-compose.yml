@@ -19,7 +19,7 @@ services:
     environment:
       MYSQL_DATABASE: mysql_db
       MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      MYSQL_PASSWORD : root
       MYSQL_ROOT_PASSWORD: root
     command:
       - --character-set-server=utf8mb4
